@@ -14,9 +14,8 @@ function timers() {
             };
             
     }
-    function setClock(id, endtime) {
-        let timer = document.getElementById('id'),
-            hours = document.querySelector('.hours'),
+    function setClock(endtime) {
+        let hours = document.querySelector('.hours'),
             minutes = document.querySelector('.minutes'),
             seconds = document.querySelector('.seconds'),
             timeInterval = setInterval(updateClock, 1000);
