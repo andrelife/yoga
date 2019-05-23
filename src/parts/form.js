@@ -12,14 +12,14 @@ function form() {
         contactForm = document.getElementById('form');
     statusMessage.classList.add('status');
 
-    function sendForm(elem) {
-        elem.addEventListener('submit', function (event) {
+    const sendForm = (elem) => {
+        elem.addEventListener('submit', (event) => {
             event.preventDefault();
             elem.appendChild(statusMessage);
             let formData = new FormData(elem);
 
             function posData(data) {
-                return new Promise(function (resolve, reject) {
+                return new Promise((resolve, reject) => {
                     let request = new XMLHttpRequest();
                     request.open('POST', 'server.php');
                     request.setRequestHeader('Content-Type',
@@ -37,7 +37,7 @@ function form() {
                         }
                     };
                     let obj = {};
-                    formData.forEach(function (value, key) {
+                    formData.forEach((value, key) => {
                         obj[key] = value;
                     });
                     let json = JSON.stringify(obj);
@@ -45,7 +45,7 @@ function form() {
                 });
             }
 
-            function clearInput() {
+            const clearInput = () => {
                 for (let i = 0; i < input.length; i++) {
                     input[i].value = '';
                 }

@@ -26,13 +26,13 @@ function slider() {
         const currentSlide = (n) => {
             showSlides(slideIndex = n);
         }
-        prev.addEventListener('click', ()=> {
+        prev.addEventListener('click', () => {
             plusSlides(-1);
         });
-        next.addEventListener('click', ()=> {
+        next.addEventListener('click', () => {
             plusSlides(1);
         });
-        dotsWrap.addEventListener('click', (event)=> {
+        dotsWrap.addEventListener('click', (event) => {
             for(let i = 0; i < dots.length + 1; i++) {
                 if(event.target.classList.contains('dot') && event.target == dots[i - 1]) {
                     currentSlide(i);
